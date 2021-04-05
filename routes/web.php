@@ -28,5 +28,7 @@ Route::middleware('cors')->group(function () {
         Route::get('', [BookController::class, 'index'])->name('book.index');
         Route::get('/create', [BookController::class, 'create'])->name('book.create');
         Route::post('/create', [BookController::class, 'store'])->name('book.store');
+        Route::get('edit/{id}', [BookController::class, 'edit'])->name('book.edit');
+        Route::post('edit/{id}', [BookController::class, 'update'])->name('book.update');
     });
 });

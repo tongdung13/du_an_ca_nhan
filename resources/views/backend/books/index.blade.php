@@ -30,6 +30,7 @@
                     <td>{{ $value->status }}</td>
                     <td>{{ $value->description }}</td>
                     <td>
+                        <a href="{{ route('book.edit', $value->id) }}" class="btn btn-sm btn-outline-success">Update</a>
                     </td>
                 </tr>
             @endforeach
