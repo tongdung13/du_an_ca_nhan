@@ -27,6 +27,7 @@
     <nav class="navbar navbar-dark bg-dark">
      <a href="{{ route('users.index') }}">login</a>
      <a href="{{ route('book.index') }}">Book</a>
+     <a href="{{ route('users.logout') }}">Logout</a>
     </nav>
     @yield('content')
     <script>

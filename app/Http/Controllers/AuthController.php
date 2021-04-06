@@ -37,6 +37,6 @@ class AuthController extends Controller
         Auth::logout();
         $request->session()->invalidate();
         $request->session()->regenerateToken();
-        return view('logins.login');
+        return redirect()->route('users.index')->with('message', 'Bạn đã đăng xuất thành công.');
     }
 }

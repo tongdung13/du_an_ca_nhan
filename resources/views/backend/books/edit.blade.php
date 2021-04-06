@@ -27,9 +27,9 @@
                     <label for="">image</label><br>
                     <input type="file" name="image" class="form-control-file" value="{{ $book->image }}">
                     <img src="{{ url('storage/' . $book->image) }}" height="100px" width="100px">
-                    @if($errors->any())
+                    {{-- @if($errors->any())
                         <p style="color: red"> {{ $errors->first('image') }}</p>
-                    @endif
+                    @endif --}}
                 </div>
             </div>
             <div class="col-6">

@@ -21,6 +21,7 @@ Route::get('/', function () {
 Route::prefix('users')->group(function () {
     Route::get('/', [AuthController::class, 'index'])->name('users.index');
     Route::post('login', [AuthController::class, 'authenticate'])->name('users.login');
+    Route::get('logout', [AuthController::class, 'logout'])->name('users.logout');
 });
 
 Route::middleware('cors')->group(function () {
