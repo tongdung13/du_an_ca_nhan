@@ -6,7 +6,7 @@ use Closure;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-class CORS
+class AuthUser
 {
     /**
      * Handle an incoming request.
@@ -17,11 +17,11 @@ class CORS
      */
     public function handle(Request $request, Closure $next)
     {
-        if (\Illuminate\Support\Facades\Session::has('login')) {
-            if (Auth::user()->role == "0") {
-                return redirect()->route('book.index')->with('message', 'Bạn đã đăng nhập thành công');
-            }
+        if (Auth::check()) {
+            return $next($request);
+        } else {
+            return redirect()->route('login')->with('error', 'Bạn đăng nhập thất bại');
         }
-        return $next($request);
+
     }
 }
